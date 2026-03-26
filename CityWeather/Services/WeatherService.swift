@@ -20,7 +20,7 @@ struct WeatherService {
             URLQueryItem(name: "q", value: city),
             URLQueryItem(name: "appid", value: apiKey),
             URLQueryItem(name: "units", value: "metric"),
-            URLQueryItem(name: "lang", value: "ua")
+            URLQueryItem(name: "lang", value: "en")
         ]
         
         guard let url = components.url else {

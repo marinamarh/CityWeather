@@ -35,5 +35,6 @@ struct WeatherDetailView: View {
 
 
 #Preview {
-    WeatherDetailView(weatherViewModel: WeatherViewModel.example, weather: WeatherViewModel.example.weather!)
+    let viewModel = WeatherViewModel.example
+    WeatherDetailView(weatherViewModel: viewModel, weather: viewModel.weatherList[0])
 }

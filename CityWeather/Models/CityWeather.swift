@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct CityWeather: Identifiable, Hashable, Sendable {
-    let id: UUID
+struct CityWeather: Identifiable, Hashable, Sendable, Codable {
+    let id: Int
     let cityName: String
     let country: String
     let temperature: Double
@@ -61,7 +61,7 @@ extension CityWeather {
 extension WeatherResponse {
     func toCityWeather(isFavorite: Bool = false) -> CityWeather {
         CityWeather(
-            id: UUID(), cityName: name, country: sys.country ?? "",
+            id: id, cityName: name, country: sys.country ?? "",
             temperature: main.temp, feelsLike: main.feelsLike, tempMin: main.tempMin, tempMax: main.tempMax,
             humidity: main.humidity, pressure: main.pressure, rain: rain?.oneHour, windSpeed: wind.speed, cloudiness: clouds.all, visibility: visibility ?? 0,
             description: weather.first?.description ?? "", icon: weather.first?.icon ?? "",

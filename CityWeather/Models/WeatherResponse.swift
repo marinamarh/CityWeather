@@ -8,6 +8,7 @@
 import Foundation
 
 struct WeatherResponse: Codable, Sendable {
+    let id: Int
     let coord: Coord
     let weather: [WeatherInfo]
     let main: MainInfo
